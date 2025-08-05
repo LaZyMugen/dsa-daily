@@ -1,2 +1,8 @@
-# dsa-daily
-daily dsa-problem solving, progress tracking, code uploads
+
+# DSA Daily 💻
+
+Daily tracking of Data Structures & Algorithms problems for interview prep.
+
+## 📁 Structure
+- `problems/` → Code files (C++)
+- `progress.md` → Daily log

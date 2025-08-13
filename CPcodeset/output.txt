@@ -1,3 +1,0 @@
-Median: 2
-Sum: 12
-This is a compile-time constant expression.

@@ -33,23 +33,21 @@ template<typename typC,typename typD> ostream &operator<<(ostream &cout,const ve
 template<typename typC> ostream &operator<<(ostream &cout,const vector<typC> &a) { int n=a.size(); if (!n) return cout; cout<<a[0]; for (int i=1; i<n; i++) cout<<' '<<a[i]; return cout; }
 // ===================================END Of the input module ==========================================
 
-void solve(){
-    int n;
-    cin >> n;
-    cout << 1 <<" "<<n-3<< " " << 1 << " " << 1 << "\n";
+
+void solve() {
+    int n; cin >> n;
+    if(n == 1){ cout << 1; return; }
+    if(n == 2 || n == 3){ cout << "NO SOLUTION"; return; }
+    for(int i=2;i<=n;i+=2) cout << i << " ";
+    for(int i=1;i<=n;i+=2) cout << i << " ";
 }
+
 
 int32_t main()
 {
  
  ios_base::sync_with_stdio(false);
  cin.tie(NULL);
-
-    int T = 1;
-    cin >> T;
-    while (T--)
-    {
-        solve();
-    }
+ solve();
     return 0;
 }

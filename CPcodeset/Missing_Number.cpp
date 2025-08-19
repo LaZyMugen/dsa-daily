@@ -33,53 +33,44 @@ template<typename typC,typename typD> ostream &operator<<(ostream &cout,const ve
 template<typename typC> ostream &operator<<(ostream &cout,const vector<typC> &a) { int n=a.size(); if (!n) return cout; cout<<a[0]; for (int i=1; i<n; i++) cout<<' '<<a[i]; return cout; }
 // ===================================END Of the input module ==========================================
 
-// void solve(){
 
-//     int n;
-//     cin>>n;
-//     int ans=0;
-//     fr(i,n){
-//         int a,b,c;
-//         cin>>a>>b>>c;
-//         if(a+b+c>=2) ans++;
-//     }
-//     cout << ans << '\n';
-
-// }
 void solve(){
-    int n;
-    cin>>n;
-    int ans = 0;
-    for(int i = 0; i < n; i++){
-        int a, b, c;
-        cin >> a >> b >> c;
-        if(a + b + c >= 2) ans++;
-    }
-    cout << ans << "\n";
+ int n;
+ cin >> n;
+ vi a(n);
+ cin >> a;
+ srt(a);
+ int missing = -1;
+ rep(i, 1, n) {
+     if (a[i] != a[i - 1] + 1) {
+         missing = a[i - 1] + 1;
+         break;
+     }
+ }
+ cout << missing << "\n";
 }
-
-//    void solve(){
-//     int n;
-//     cin >> n;
-//     int ans = 0;
-//     fr(i, n){
-//         int a, b, c;
-//         cin >> a >> b >> c;
-//         if (a + b + c >= 2) ans++;
-//     }
-//     cout << ans << '\n';
-// }
-
-
 
 int32_t main()
 {
- int ans;
+ 
  ios_base::sync_with_stdio(false);
  cin.tie(NULL);
-
-   
-        solve();
-    
+ solve();
     return 0;
 }
+
+//alt way of solving calculate sum of 1+2..n - sum if input numbers
+// int main() {
+//     int n;
+//     cin >> n;
+//     int sum = 0;
+//     for (int i = 1; i <= n; i++) {
+//         sum += i;
+//     }
+//     for (int i = 1; i <= n - 1; i++) {
+//         int x;
+//         cin >> x;
+//         sum -= x;
+//     }
+//     cout << sum << "\n";
+// }
